@@ -19,3 +19,6 @@ This web app was created by Kevin Kipyegon. If you have any suggestions or impro
 ![Home](assets/galleryhome.png)
 ![Category](assets/gallerycategory.png)
 ![Singlepic](assets/gallerysinglepic.png)
+
+## Liscence.
+This is an open source project avaiable under the [MIT Liscence](LISCENCE).
