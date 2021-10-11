@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %} {% block super %}
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> {% endblock %}
+
+<div class="container">
+
+
+    {% if image %}
+    <h2> {{image|length}} pictures found for location {{message}} </h2>
+    {% else %}
+    <h2> No pictures found for keyword {{message}} </h2>
+    {% endif %} {% if image %} {% for my_image in image %}
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="card" style="width: 300px;">
+                    <img src="{{my_image.image.url}}" class="card-img-top" alt="..." width="400px">
+                    <div class="card-body text-center">
+
+                        <h3 class="card-title">{{my_image.name}}</h3>
+                        <p class="card-text"> <b>DESCRIPTIONS :</b> {{my_image.description}}</p>
+                        <h3 class="card-title">
+                            <b>LOCATION :</b> {{my_image.location}}</h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %} {% endif %}
+</div>
+
+<style>
+    body {
+        /* background-image: url("https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"); */
+        height: 90vh;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .jumbotron {
+        width: 500px;
+        color: #fff;
+        background-color: rgba(18, 23, 32, 0.8);
+    }
+</style>
+{% endblock %}
