@@ -9,7 +9,7 @@
     {% else %}
     <h2> No pictures found for keyword {{message}} </h2>
     {% endif %} {% if image %} {% for my_image in image %}
-    <div class="jumbotron">
+    <div class="jumbotron" style="margin-left: 27%;">
         <div class="row">
             <div class="col-md-6">
 
@@ -17,10 +17,10 @@
                     <img src="{{my_image.image.url}}" class="card-img-top" alt="..." width="400px">
                     <div class="card-body text-center">
 
-                        <h3 class="card-title">{{my_image.name}}</h3>
-                        <p class="card-text"> <b>About Image:</b> {{my_image.description}}</p>
-                        <h3 class="card-title">
-                            <b>Location :</b> {{my_image.location}}</h3>
+                        <h5 class="card-title">{{my_image.name}}</h5>
+                        <h5 class="card-text"> <b>About Image:</b> {{my_image.description}}</h5>
+                        <h5 class="card-title">
+                            <b>Location :</b> {{my_image.location}}</h5>
 
                     </div>
                 </div>

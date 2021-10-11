@@ -2,8 +2,8 @@
 <!-- Filter function for Category -->
 <main class="wrapper">
     <section class="section1">
-        <h1>--- GRAND GALLERY ---</h1>
-        <p style="padding-bottom: 80px; ">Reminisce On The Good Old Times</p>
+        <h1 style="font-family: 'Basic', sans-serif;">--- GRAND GALLERY ---</h1>
+        <h3 style="padding-bottom: 80px; font-family: 'Basic', sans-serif;">Reminisce On The Good Old Times</h3>
 
         <div class="row">
             <div class="col-md-3 col-sm-3 "></div>
@@ -26,7 +26,7 @@
                 }
 
                 // Close the dropdown if the user clicks outside of it
-                window.onclick = function(event) {
+                window.onclick = function (event) {
                     if (!event.target.matches('.dropbtn ')) {
                         var dropdowns = document.getElementsByClassName("dropdown-content");
                         var i;
@@ -39,37 +39,51 @@
                     }
                 }
             </script>
-            <!-- Filter functions for Location -->
+
+
+
+
             <div class="col-md-3 col-sm-3 col-xs-6">
-                <div class="w3-dropdown-click">
-                    <button onclick="myFunction2()" class="w3-button  dropbtn">View by Location</button>
-                    <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+                <div class="dropdown">
+                    <button onclick="loctionFns()" class=" w3-button dropbtn">Filter by Location</button>
+                    <div id="myDropdown1" class="dropdown-content">
                         {% for my_loc in location_pics %}
-                        <a href="/location/{{my_loc.id}}" class="w3-bar-item w3-button"> {{my_loc.location_name}} </a>
-                        <p>{{locationpic}}</p>
-                        {% endfor %}
+                        <a href="/location/{{my_loc.id}}"> {{my_loc.location_name}}</a> {% endfor %}
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-3 "></div>
 
-            <!-- Scripts for location filter functions -->
+            <!-- Scripts for category filter functions -->
             <script>
-                function myFunction2() {
-                    var x = document.getElementById("Demo");
-                    if (x.className.indexOf("w3-show") == -1) {
-                        x.className += " w3-show";
-                    } else {
-                        x.className = x.className.replace(" w3-show", "");
+                /* When the user clicks on the button, 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    toggle between hiding and showing the dropdown content */
+                function loctionFns() {
+                    document.getElementById("myDropdown1").classList.toggle("show");
+                }
+
+                // Close the dropdown if the user clicks outside of it
+                window.onclick = function (event) {
+                    if (!event.target.matches('.dropbtn ')) {
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                        }
                     }
                 }
             </script>
+
+
+
 
         </div>
     </section>
     <section class="section static">
         <div class="container">
-            
+
             <div class="row pics" style="text-align: center;">
                 {% for pic in pics %}
 
@@ -116,7 +130,8 @@
                 </div>
                 <div class="modal-footer" style="text-align: center;">
                     <p>{{pic.author}}</p>
-                    <a href="{{ pic.image.url }}"> <input class="form-control" type="text" value="{{ pic.image.url }}" id="link"></a>
+                    <a href="{{ pic.image.url }}"> <input class="form-control" type="text" value="{{ pic.image.url }}"
+                            id="link"></a>
                     <a onclick="myFunction()"><button type="button" class="btn btn-outline-success">Copy
                             Link</button></a>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -145,20 +160,20 @@
         text-align: center;
         padding: 50px;
     }
-    
+
     .static {
         padding: 40px;
         color: black;
         font-size: large;
     }
-    
+
     .btn-styled {
         padding: 9%;
         border: none;
         background: none;
         width: auto;
     }
-    
+
     .dropbtn {
         background-color: #291440;
         color: white;
@@ -167,17 +182,17 @@
         border: none;
         cursor: pointer;
     }
-    
+
     .dropbtn:hover,
     .dropbtn:focus {
         background-color: gray;
     }
-    
+
     .dropdown {
         position: relative;
         display: inline-block;
     }
-    
+
     .dropdown-content {
         display: none;
         position: absolute;
@@ -187,34 +202,34 @@
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
-    
+
     .dropdown-content a {
         color: black;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
     }
-    
+
     .dropdown a:hover {
         background-color: #ddd;
     }
-    
+
     .show {
         display: block;
     }
-    
+
     .image2 {
         height: 400px;
         transition: transform .2s;
     }
-    
+
     .image2:hover {
         -ms-transform: scale(1.2);
         -webkit-transform: scale(1.2);
         transform: scale(1.2);
         box-shadow: 5px 5px 5px pink;
     }
-    
+
     .modal-content {
         background-image: url("https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
         background-position: center;
@@ -222,7 +237,7 @@
         background-size: cover;
         background-repeat: no-repeat;
     }
-    
+
     .wrapper {
         background-image: url("https://images.pexels.com/photos/9668747/pexels-photo-9668747.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
         height: 78vh;
@@ -233,7 +248,7 @@
         padding-top: 8%;
         margin-top: -20px;
     }
-   
+
     .section1 {
         color: #fff;
     }
