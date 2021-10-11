@@ -15,6 +15,12 @@ This web app was created by Kevin Kipyegon. If you have any suggestions or impro
 4. HTML
 5. CSS/Bootstrap
 
+## Setup and Installation
+1. Git clone repository to your device and run in on preferably VS Code: git clone https://github.com/kevaf/Grand-Gallery.git
+2. Pip install requirements.txt
+3. Setup a psql database and create migrations.
+3. To run the app locally on your machine run this code on your terminal: python3.8 manage.py runserver
+
 ## Project Screenshot
 ![Home](assets/galleryhome.png)
 ![Category](assets/gallerycategory.png)
