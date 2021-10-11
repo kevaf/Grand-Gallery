@@ -16,3 +16,6 @@ This web app was created by Kevin Kipyegon. If you have any suggestions or impro
 5. CSS/Bootstrap
 
 ## Project Screenshot
+![Home](assets/galleryhome.png)
+![Category](assets/gallerycategory.png)
+![Singlepic](assets/gallerysinglepic.png)
