@@ -1,7 +1,7 @@
 import datetime as dt
 from django.shortcuts import render, redirect
 from django.http  import HttpResponse, Http404
-from .models import Author, Images, Category
+from .models import Author, Images, Category, Location
 from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
@@ -11,9 +11,11 @@ def welcome(request):
 def pics(request):
     category = Category.get_categories()
     pictures = Images.all_pics()
+    location_pics = Location.get_location()
+
+    return render(request,'allpics.html',{'pictures': pictures, 'category': category, 'location_pics':location_pics })
 
 
-    return render(request,'pics.html',{'pictures': pictures, 'category': category })
 
 
 def single_pic(request,id):
@@ -36,7 +38,9 @@ def search_results(request):
         return render(request,'search.html',{"message":message})
 
 
-
+def viewPics_by_location(request,location):
+    locationpic = Images.view_pictures_by_location(location)
+    return render(request,"location_pics.html",{"locationpic":locationpic})
 
 def viewPics_by_category(request,category):
     photos =Images.view_pictures_by_category(category)
