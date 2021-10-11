@@ -1,20 +1,23 @@
 {% extends 'base.html' %} {% block content %} {% block super %}
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> {% endblock %}
 <div class="container">
-    {% for pic in photos %}
+
     <div class="row">
+        {% for pic in photos %}
         <div class="col-md-4">
-            <h1> {{pic.name}} </h1>
-            <h2> {{pic.description}} </h2>
+           
+            <h2 style="color: black;"> {{pic.name}} </h2>
+            <p style="color: black;"> {{pic.description}} </p>
 
             <button type="button" class="btn btn-styled" data-toggle="modal" data-target="#myModal{{pic.id}}">
             <img width="400px" src=" {{pic.image.url}} " class="img-responsive" alt="one pic image">
-            <a class="btn btn-success" href="/single_pic/{{pic.id}} ">More</a> 
+            <a class="btn btn-success" href="/single_pic/{{pic.id}} ">View More About This Image</a> 
         </div>
+        {% endfor %}
         
     </div>
         
-        </button> <br> {% endfor %} {% for pic in photos %}
+        </button> <br>  {% for pic in photos %}
             <div class="modal fade" id="myModal{{pic.id}}" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -47,7 +50,7 @@
     </div>
     <style>
         body {
-            /* background-image: url("https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"); */
+            background-image: url("https://images.pexels.com/photos/7911758/pexels-photo-7911758.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
             height: 90vh;
             background-position: center;
             background-size: cover;
