@@ -6,8 +6,8 @@
         {% for pic in photos %}
         <div class="col-md-4">
            
-            <h2 style="color: black;"> {{pic.name}} </h2>
-            <p style="color: black;"> {{pic.description}} </p>
+            <h2> {{pic.name}} </h2>
+            <p> {{pic.description}} </p>
 
             <button type="button" class="btn btn-styled" data-toggle="modal" data-target="#myModal{{pic.id}}">
             <img width="400px" src=" {{pic.image.url}} " class="img-responsive" alt="one pic image">
@@ -50,7 +50,7 @@
     </div>
     <style>
         body {
-            background-image: url("https://images.pexels.com/photos/7911758/pexels-photo-7911758.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+            background-image: url("https://images.pexels.com/photos/9668747/pexels-photo-9668747.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
             height: 90vh;
             background-position: center;
             background-size: cover;

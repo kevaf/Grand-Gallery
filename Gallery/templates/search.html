@@ -5,7 +5,7 @@
 
 
     {% if image %}
-    <h2> {{image|length}} pictures found for location {{message}} </h2>
+    <h2> {{image|length}} Item matched the search term "{{message}}" </h2>
     {% else %}
     <h2> No pictures found for keyword {{message}} </h2>
     {% endif %} {% if image %} {% for my_image in image %}
@@ -18,9 +18,9 @@
                     <div class="card-body text-center">
 
                         <h3 class="card-title">{{my_image.name}}</h3>
-                        <p class="card-text"> <b>DESCRIPTIONS :</b> {{my_image.description}}</p>
+                        <p class="card-text"> <b>About Image:</b> {{my_image.description}}</p>
                         <h3 class="card-title">
-                            <b>LOCATION :</b> {{my_image.location}}</h3>
+                            <b>Location :</b> {{my_image.location}}</h3>
 
                     </div>
                 </div>
@@ -32,7 +32,7 @@
 
 <style>
     body {
-        /* background-image: url("https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"); */
+        background-image: url("https://images.pexels.com/photos/9668747/pexels-photo-9668747.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
         height: 90vh;
         background-position: center;
         background-size: cover;
