@@ -2,14 +2,14 @@
 <!-- Filter function for Category -->
 <main class="wrapper">
     <section class="section1">
-        <h1>Grand Gallery</h1>
-        <p style="padding-bottom: 80px;">Reminisce On The Good Old Times</p>
+        <h1 style="color: black;">--- GRAND GALLERY ---</h1>
+        <p style="padding-bottom: 80px; color: black;">Reminisce On The Good Old Times</p>
 
         <div class="row">
             <div class="col-md-3 col-sm-3 "></div>
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="dropdown">
-                    <button onclick="myFunction1()" class=" w3-button dropbtn" style="margin-top:-116% ;">View by Category</button>
+                    <button onclick="myFunction1()" class=" w3-button dropbtn">View by Category</button>
                     <div id="myDropdown" class="dropdown-content">
                         {% for my_catpic in category %}
                         <a href="/category/{{my_catpic.id}}">{{my_catpic.category_name}}</a> {% endfor %}
@@ -42,7 +42,7 @@
             <!-- Filter functions for Location -->
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="w3-dropdown-click">
-                    <button onclick="myFunction2()" class="w3-button  dropbtn" style="margin-top:-120% ;">View by Location</button>
+                    <button onclick="myFunction2()" class="w3-button  dropbtn">View by Location</button>
                     <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
                         {% for my_loc in location_pics %}
                         <a href="/location/{{my_loc.id}}" class="w3-bar-item w3-button"> {{my_loc.location_name}} </a>
@@ -69,7 +69,7 @@
     </section>
     <section class="section static">
         <div class="container">
-            <h1>--- GRAND GALLERY ---</h1>
+            
             <div class="row pics" style="text-align: center;">
                 {% for pic in pics %}
 
